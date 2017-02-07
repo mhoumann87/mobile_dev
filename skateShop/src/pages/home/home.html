@@ -1,22 +1,23 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      SkateShop.com
+      Ionic Blank
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- Complete the "skateshop" so that the buyer can choose trucks, griptape, wheels and bearings...
+    Complete the "skateshop" so that the buyer can choose trucks, griptape, wheels and bearings...
 
- <ion-item>
-  <ion-lable>Pick your skateboard</ion-lable>
-  <ion-select [(ngModel)]="selectBoard">
-    <ion-option *ngFor="let board of boards" [value]="board">{{board.model}}</ion-option>
-  </ion-select>
- </ion-item>
+  <ion-item>
+    <ion-label>Pick board</ion-label>
+    <ion-select [(ngModel)]="selectedBoard">
+        <ion-option *ngFor="let board of boards" [value]="board">{{board.model}}</ion-option>
+    </ion-select>
+  </ion-item>
 
- <ion-lable>{{selectedBoard.brand}}</ion-lable>
+  <ion-label>{{selectedBoard.brand}}</ion-label>
 
- <buton ion-button (click)="buySkateboard()">Buy Skateboard</buton>
+  <button ion-button (click)="buySkateboard()">Buy Skateboard</button>
+
 </ion-content>
