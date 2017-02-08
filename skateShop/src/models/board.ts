@@ -1,16 +1,14 @@
+import { Deck } from './deck';
+import { Griptape } from './griptape';
+import { Trucks } from './truck';
+import { Bearings } from './bearings';
+import { Wheels } from './wheels';
+
 export class Board
 {
-    brand:string;
-    model:string;
-    color:string;
-    price:number;
-
-    constructor(brand:string, model:string, color:string, price:number )
-    {
-        this.brand = brand;
-        this.model = model;
-        this.color = color;
-        this.price = price;
-    }
-    
+    deck: Deck;
+    griptape: Griptape;
+    trucks: Trucks;
+    bearingss: Bearings;
+    wheels: Wheels;
 }

@@ -10,15 +10,19 @@ import { Board } from '../../models/board';
 export class HomePage {
 
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
-    this.boards.push(new Board("myModel1", "myBrand1", "Blue", 399 ));
-    this.boards.push(new Board("myModel2", "myBrand2", "Red", 399 ));
-    this.boards.push(new Board("myModel3", "myBrand3", "Black", 399 ));
-    
-    this.selectedBoard = new Board("","","",0);
-  }
-  public selectedBoard:Board;
+  
 
-  public boards:Array<Board> = new Array<Board>();
+  };
+
+    
+   // this.selectedBoard = new Board("","","",0);
+
+    
+  }
+
+  //public selectedBoard:Board;
+
+  //public boards:Array<Board> = new Array<Board>();
 
   buySkateboard()
   {
