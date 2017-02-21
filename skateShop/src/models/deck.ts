@@ -10,7 +10,7 @@ constructor(length: number, deckColor: string, material: string, deckPrice: numb
     this.length = length;
     this.deckColor = deckColor;
     this.material = material;
-    deckPrice = deckPrice;
+    this.deckPrice = deckPrice;
 }
 
 }
