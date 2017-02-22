@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-var date = new date();
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
