@@ -1,5 +1,5 @@
 import { Player } from './player';
-import { Board } from './game';
+import { Board } from './board';
 
 export class Game {
 

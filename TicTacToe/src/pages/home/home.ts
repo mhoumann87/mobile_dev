@@ -31,9 +31,23 @@ export class HomePage {
         name: 'playerTwo',
         placeholder: 'Player Two'
       }
+      ],
+      buttons: [
+        {
+          name: 'cancel',
+          type: 'button-assertive',
+          onTap: function() {
+            console.log('Cancel selected')
+          }
+        },
+        {
+          name: 'confirm',
+          type: 'button-balanced'
+        }
       ]
 
-    })
+    });
+   
   }
 
 }
