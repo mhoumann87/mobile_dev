@@ -16,37 +16,39 @@ export class HomePage {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
     
   }
-
-  getNames() {
-
-    let popUp = this.alertCtrl.create({
-      title: 'Enter Player Names',
-      message: 'Enter Name For Players',
-      inputs: [
-        {
-        name: 'playerOne',
-        placeholder: 'Player One'
-      },
-      {
-        name: 'playerTwo',
-        placeholder: 'Player Two'
-      }
-      ],
-      buttons: [
-        {
-          name: 'cancel',
-          type: 'button-assertive',
-          onTap: function() {
-            console.log('Cancel selected')
+    showPrompt() {
+      let prompt = this.alertCtrl.create({
+        title: 'Player name',
+        message: "Enter a name for player",
+        inputs: [
+          {
+            name: 'PlayerOne',
+            placeholder: 'Player One'
+          },
+          {
+             name: 'PlayerTwo',
+             placeholder: 'Player Two'
+          },
+        ],
+        buttons: [
+          {
+            text: 'Cancel',
+            handler: data => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: 'Save',
+            handler: data => {
+              console.log('PlayerOne: ' + data.PlayerOne + ' PlayerTwo: ' + data.PlayerTwo );
+              this.game.setPlayerName(data.PlayerOne, data.PlayerTwo);
+              console.log(JSON.stringify(this.game.playerOne));
+              console.log(JSON.stringify(this.game.playerTwo));
+            }
           }
-        },
-        {
-          name: 'confirm',
-          type: 'button-balanced'
-        }
-      ]
-
-    });
+        ]
+      });
+      prompt.present();
    
   }
 
