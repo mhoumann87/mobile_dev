@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <i class="fa fa-hashtag" aria-hidden="true"></i>&nbsp;TicTacToe&nbsp;<i class="fa fa-gamepad" aria-hidden="true"></i>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h5>Next turn:</h5>
+<ion-grid class="gameboard">
+  <ion-row class="line-one">
+    <ion-col width-33 class="tile edge">
+      <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+        <i class="fa fa-circle-o"></i>
+      </button>
+  </ion-col>
+  <ion-col width-33 class="tile edge">
+      <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+        <i class="fa fa-circle-o"></i>
+      </button>
+  </ion-col>
+  <ion-col width-33 class="tile">
+     <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+       <i class="fa fa-circle-o"></i>
+     </button>
+  </ion-col>
+  </ion-row>
+  <ion-row class="line-two">
+    <ion-col width-33 class="tile edge">
+      <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+        <i class="fa fa-circle-o"></i>
+      </button>
+  </ion-col>
+  <ion-col width-33 class="tile edge">
+      <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+        <i class="fa fa-circle-o"></i>
+      </button>
+  </ion-col>
+  <ion-col width-33 class="tile">
+     <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+       <i class="fa fa-circle-o"></i>
+     </button>
+  </ion-col>
+  </ion-row>
+    <ion-row class="line-three">
+    <ion-col width-33 class="tile edge">
+      <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+        <i class="fa fa-circle-o"></i>
+      </button>
+  </ion-col>
+  <ion-col width-33 class="tile edge">
+      <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+        <i class="fa fa-circle-o"></i>
+      </button>
+  </ion-col>
+  <ion-col width-33 class="tile">
+     <button class="place-brick brick" id="1" (click)="placeBrick('1')">
+       <i class="fa fa-circle-o"></i>
+     </button>
+  </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid>
+  <ion-row class="players">
+    <ion-col width-50 class="one">
+      <p><i class="fa fa-circle-o"></i></p>
+      <p>Michael</p>
+      <p><i class="fa fa-trophy"></i>&nbsp;0</p>
+    </ion-col>
+    <ion-col width-50 class="two">
+      <p><i class="fa fa-times"></i></p>
+      <p>Henrik</p>
+      <p><i class="fa fa-trophy"></i>&nbsp;0</p>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
