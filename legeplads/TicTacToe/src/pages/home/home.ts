@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController, AlertController } from 'ionic-angular';
+import { Game } from '../../models/game';
 
 @Component({
   selector: 'page-home',
@@ -8,11 +9,9 @@ import { NavController, AlertController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, alertCtrl: AlertController) {
-  }
-
-    public playerOneName ="Pia";
-    public playerTwoName ="Henrik";
+    public game = new Game();
+    public playerOneName = ""; 
+    public playerTwoName = "";
     public inputValue = "";
     public currentPlayer = "";
     public count = 1;
@@ -23,22 +22,72 @@ export class HomePage {
     public playerTwoScore = 0;
     public wins = [7, 56, 448, 73, 146, 292, 273, 84];
 
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+
+    }
+
+    showPrompt() {
+      let prompt = this.alertCtrl.create({
+        title: 'Player name',
+        message: "Enter the names for the players",
+        inputs: [
+          {
+            name: 'PlayerOne',
+            placeholder: 'Player One'
+          },
+          {
+             name: 'PlayerTwo',
+             placeholder: 'Player Two'
+          },
+        ],
+        buttons: [
+          {
+            text: 'Cancel',
+            handler: data => {
+              console.log('Cancel clicked');
+            }
+          },
+          {
+            text: 'Save',
+            handler: data => {
+              console.log('PlayerOne: ' + data.PlayerOne + ' PlayerTwo: ' + data.PlayerTwo );
+              this.game.setPlayerName(data.PlayerOne, data.PlayerTwo);
+              this.playerOneName = this.game.playerOne.playerName;
+              this.playerTwoName = this.game.playerTwo.playerName;
+              console.log(JSON.stringify(this.game.playerOne));
+              console.log(JSON.stringify(this.game.playerTwo));
+            }
+          }
+        ]
+      });
+      prompt.present();
+   
+  }
+
+   presentAlert(data) {
+     let alert = this.alertCtrl.create({
+     title: 'Winner',
+     subTitle: data + ' wins',
+     buttons: ['Ok']
+  });
+  alert.present()
+   }
+
+
 checkWin(score){
     for(var i = 0; i < this.wins.length; i++){
         if((this.wins[i] & score)  === this.wins[i]){
             if(this.currentPlayer == this.playerOneName){
                 this.newGame();
-                alert(this.playerOneName + " Wins");
-                this.oneWins =+1;
+                this.presentAlert(this.playerOneName);
             } else{
                 this.newGame();
-                alert(this.playerTwoName + " Wins");
-                this.twoWins =+1;
+                this.presentAlert(this.playerTwoName);
             }
         }    
     }
     if(this.count == 10){
-        alert("TIE");
+        this.presentAlert('It is a tie. No one ');
         this.newGame();
     }
 }
@@ -76,8 +125,6 @@ newGame(){
         if(tile != null || tile != undefined){
             tile.textContent="";
             tile.disabled = false;
-            this.oneWins = this.oneWins;
-            this.twoWins = this.twoWins;
             this.currentPlayer = "";
             i+=i;
             console.log(i);
@@ -87,6 +134,7 @@ newGame(){
     this.playerTwoScore = 0;
     this.count=1;
     }
+
 }
 
 

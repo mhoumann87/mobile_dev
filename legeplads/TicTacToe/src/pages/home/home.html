@@ -7,7 +7,8 @@
 </ion-header>
 
 <ion-content padding>
-  <h5>{{currentPlayer}}</h5>
+
+ <h5>{{currentPlayer}}</h5>
 <ion-grid class="gameboard">
   <ion-row class="line-one">
     <ion-col width-33 class="tile edge">
@@ -67,13 +68,19 @@
     <ion-col width-50 class="one">
       <p><i class="fa fa-circle-o"></i></p>
       <p>{{playerOneName}}</p>
-      <p><i class="fa fa-trophy"></i>&nbsp;{{oneWins}}</p>
     </ion-col>
     <ion-col width-50 class="two">
       <p><i class="fa fa-times"></i></p>
       <p>{{playerTwoName}}</p>
-      <p><i class="fa fa-trophy"></i>&nbsp;{{twoWins}}</p>
     </ion-col>
   </ion-row>
 </ion-grid>
-</ion-content>
+<ion-grid>
+  <ion-row class="get-name">
+    <ion-col clo-12>
+      <button ion-button color="secondary" block (click)="showPrompt()">Set Player Names</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+  </ion-content>
+
