@@ -12,8 +12,8 @@ export class Game {
 
         setPlayerName(playerNameOne: string, playerNameTwo: string) {
 
-            this.playerOne = new Player(playerNameOne);
-            this.playerTwo = new Player(playerNameTwo);
+            this.playerOne = new Player(playerNameOne, 0);
+            this.playerTwo = new Player(playerNameTwo, 0);
         }
    
 }

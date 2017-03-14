@@ -12,6 +12,8 @@ export class HomePage {
     public game = new Game();
     public playerOneName = ""; 
     public playerTwoName = "";
+    public playerOneWon = 0;
+    public playerTwoWon = 0;
     public inputValue = "";
     public currentPlayer = "";
     public count = 1;
@@ -53,7 +55,9 @@ export class HomePage {
               console.log('PlayerOne: ' + data.PlayerOne + ' PlayerTwo: ' + data.PlayerTwo );
               this.game.setPlayerName(data.PlayerOne, data.PlayerTwo);
               this.playerOneName = this.game.playerOne.playerName;
+              this.playerOneWon = this.game.playerOne.playerWon;
               this.playerTwoName = this.game.playerTwo.playerName;
+              this.playerTwoWon = this.game.playerTwo.playerWon;
               console.log(JSON.stringify(this.game.playerOne));
               console.log(JSON.stringify(this.game.playerTwo));
             }
@@ -80,9 +84,11 @@ checkWin(score){
             if(this.currentPlayer == this.playerOneName){
                 this.newGame();
                 this.presentAlert(this.playerOneName);
+                this.playerOneWon += 1;
             } else{
                 this.newGame();
                 this.presentAlert(this.playerTwoName);
+                this.playerTwoWon +=1;
             }
         }    
     }
