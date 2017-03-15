@@ -6,4 +6,29 @@
 
 <ion-content padding>
 
+  <ion-grid class="addTask">
+    <ion-row>
+      <ion-col width-100>
+        <ion-card class="cardAdd">
+          <ion-item>
+            <ion-label floating>New Task</ion-label>
+            <ion-input type="text" name="task">Add task</ion-input>
+          </ion-item>
+            <ion-list radio-group>
+             <ion-list-header>Priority</ion-list-header>
+             <ion-item class="red">
+               <ion-label>High</ion-label>
+               <ion-radio value="high"></ion-radio>
+             </ion-item>
+             <ion-item class="green">
+               <ion-label>Normal</ion-label>
+               <ion-radio
+             </ion-item>
+            </ion-list>
+        </ion-card>  
+      </ion-col> 
+    </ion-row>
+  </ion-grid>
+
+
 </ion-content>
