@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { Task } from '../../models/task';
+
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
+
 export class HomePage {
 
-  constructor(public navCtrl: NavController, storage: Storage) {
+  public taskList: Array<Task>;
+
+  constructor(public navCtrl: NavController,public alertCtrl: AlertController, storage: Storage) {
 
     storage.ready().then(()=>{
-
-      storage.set('name', 'Michael');
-
-      storage.get('name').then((val) => {
+        storage.get('taskList').then((val) => {
         console.log('Your name is', val);
       })
     });
