@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>AnglersLog - Entries</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-card *ngFor="let entry of entries">
+    <ion-card-content>
+      <ion-card-header>
+        <h3>Anglers Name  {{entry.angler_name}}</h3> <h3>{{entry.datetime | date: 'dd/MM y : HH:mm'}}</h3>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Fishing Methode: {{entry.fishing_method}}</p>
+        <p>Breed: {{entry.breed}}</p>
+        <p>Weather: {{entry.weather}}</p>
+        <p>Location: {{entry.location}}</p>
+      </ion-card-content>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
